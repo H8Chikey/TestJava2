@@ -1,0 +1,4 @@
+Объектclass ru.sapteh.PersonИницилизирован
+Name: sasha
+Age: 19
+Date: 2001

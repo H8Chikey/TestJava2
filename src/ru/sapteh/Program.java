@@ -1,11 +1,15 @@
 package ru.sapteh;
 
 import javax.imageio.IIOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Program {
     public static void main(String[] args) throws Exception {
+        File dir = new File("C:/java_42/1/OOP/dir");
+        dir.mkdir();
+        File file = new File("C:/java_42/1/OOP/dir/Project.txt");
+        file.createNewFile();
+        FileWriter fw = new FileWriter(file);
         var buf = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите имя:");
         String name = buf.readLine();
@@ -15,8 +19,9 @@ public class Program {
         int date = Integer.parseInt(buf.readLine());
 
         Person person = new Person(name,age,date);
-
+        fw.write(personIsEmpty(person));
         System.out.println(personIsEmpty(person));
+        fw.close();
 
     }
     public static String personIsEmpty(Person p){
